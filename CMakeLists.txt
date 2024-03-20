@@ -21,6 +21,7 @@ add_library(lua
 
 target_compile_definitions(lua
     PRIVATE
+    $<$<PLATFORM_ID:iOS,tvOS>:LUA_USE_IOS>
     $<$<PLATFORM_ID:Linux>:LUA_USE_LINUX LUA_COMPAT_5_2>)
 
 target_compile_options(lua
